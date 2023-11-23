@@ -17,7 +17,7 @@ export function formatPrice(
 
   const numericPrice = typeof price === "string" ? parseFloat(price) : price;
 
-  return new Intl.NumberFormat("es-AR", {
+  return new Intl.NumberFormat("es-Ar", {
     style: "currency",
     currency,
     notation,
@@ -26,8 +26,8 @@ export function formatPrice(
 }
 
 export function constructMetadata({
-  title = "DigitalHippo - the marketplace for digital assets",
-  description = "DigitalHippo is an open-source marketplace for high-quality digital goods.",
+  title = "DigitalCapi - the marketplace for digital assets",
+  description = "DigitalCapi is an open-source marketplace for high-quality digital goods.",
   image = "/thumbnail.png",
   icons = "/favicon.ico",
   noIndex = false,
@@ -58,7 +58,7 @@ export function constructMetadata({
       creator: "@joshtriedcoding",
     },
     icons,
-    metadataBase: new URL("https://digitalhippo.up.railway.app"),
+    metadataBase: new URL("https://DigitalCapi.up.railway.app"),
     ...(noIndex && {
       robots: {
         index: false,

@@ -1,12 +1,13 @@
-# DigitalHippo - A Modern Fullstack E-Commerce Marketplace for Digital Products
+# DigitalCapi - A Modern Fullstack E-Commerce Marketplace for Digital Products
 
 Built with the Next.js 14 App Router, tRPC, TypeScript, Payload & Tailwind
 
-![Project Image](https://github.com/joschan21/digitalhippo/blob/master/public/thumbnail.jpg)
+![Project Image](https://github.com/joschan21/DigitalCapi/blob/master/public/thumbnail.jpg)
 
 ## Copy & Paste List to follow along with the video (annoying stuff we don't wanna type out ourselves)
 
 ### Logo SVG
+
 ```
 <svg viewBox="0 0 512 512">
     <g>
@@ -94,6 +95,7 @@ Built with the Next.js 14 App Router, tRPC, TypeScript, Payload & Tailwind
 ```
 
 ### useOnClickOutside Hook
+
 ```
 import { RefObject, useEffect } from "react";
 
@@ -125,6 +127,7 @@ export const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
 ```
 
 ### Breadcrumbs Icon
+
 ```
 <svg
     viewBox='0 0 20 20'
@@ -208,7 +211,7 @@ await payload.update({
 // send receipt
 try {
     const data = await resend.emails.send({
-    from: 'DigitalHippo <hello@joshtriedcoding.com>',
+    from: 'DigitalCapi <hello@joshtriedcoding.com>',
     to: [user.email],
     subject: 'Thanks for your order! This is your receipt.',
     html: ReceiptEmailHtml({
@@ -228,10 +231,11 @@ return res.status(200).send()
 ```
 
 ### Receipt Email Body
+
 ```
 <Html>
     <Head />
-    <Preview>Your DigitalHippo Receipt</Preview>
+    <Preview>Your DigitalCapi Receipt</Preview>
 
     <Body style={main}>
     <Container style={container}>
@@ -241,7 +245,7 @@ return res.status(200).send()
             src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-email-sent.png`}
             width='100'
             height='100'
-            alt='DigitalHippo'
+            alt='DigitalCapi'
             />
         </Column>
 
@@ -350,7 +354,7 @@ return res.status(200).send()
         <Link href='#'>Privacy Policy </Link>
         </Text>
         <Text style={footerCopyright}>
-        Copyright © 2023 DigitalHippo Inc. <br />{' '}
+        Copyright © 2023 DigitalCapi Inc. <br />{' '}
         <Link href='#'>All rights reserved</Link>
         </Text>
     </Container>
@@ -359,6 +363,7 @@ return res.status(200).send()
 ```
 
 ### Receipt Email Styles
+
 ```
 const main = {
   fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
@@ -519,6 +524,7 @@ const footerCopyright = {
 ```
 
 ### Package.json deployment commands
+
 ```
 "build:payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload build",
 "build:server": "tsc --project tsconfig.server.json",
@@ -529,6 +535,7 @@ const footerCopyright = {
 ```
 
 ### Primary Action Email Body
+
 ```
 <Html>
 <Head />
@@ -539,12 +546,12 @@ const footerCopyright = {
         src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-newsletter-sign-up.png`}
         width="150"
         height="150"
-        alt="DigitalHippo"
+        alt="DigitalCapi"
         style={logo}
     />
     <Text style={paragraph}>Hi there,</Text>
     <Text style={paragraph}>
-        Welcome to DigitalHippo, the marketplace for high quality digital
+        Welcome to DigitalCapi, the marketplace for high quality digital
         goods. Use the button below to {actionLabel}.
     </Text>
     <Section style={btnContainer}>
@@ -555,7 +562,7 @@ const footerCopyright = {
     <Text style={paragraph}>
         Best,
         <br />
-        The DigitalHippo team
+        The DigitalCapi team
     </Text>
     <Hr style={hr} />
     <Text style={footer}>
@@ -567,6 +574,7 @@ const footerCopyright = {
 ```
 
 ### Primary Action Email Styles
+
 ```
 const main = {
   backgroundColor: "#ffffff",
@@ -615,10 +623,11 @@ const footer = {
 ```
 
 ### Customizing our metadata
+
 ```
 export function constructMetadata({
-  title = 'DigitalHippo - the marketplace for digital assets',
-  description = 'DigitalHippo is an open-source marketplace for high-quality digital goods.',
+  title = 'DigitalCapi - the marketplace for digital assets',
+  description = 'DigitalCapi is an open-source marketplace for high-quality digital goods.',
   image = '/thumbnail.png',
   icons = '/favicon.ico',
   noIndex = false,
@@ -649,7 +658,7 @@ export function constructMetadata({
       creator: '@joshtriedcoding',
     },
     icons,
-    metadataBase: new URL('https://digitalhippo.up.railway.app'),
+    metadataBase: new URL('https://DigitalCapi.up.railway.app'),
     ...(noIndex && {
       robots: {
         index: false,
