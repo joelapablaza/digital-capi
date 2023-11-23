@@ -1,12 +1,11 @@
 "use client";
 
-import { Icons } from "@/components/Icons";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, EyeOff, Eye } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
@@ -18,6 +17,8 @@ import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
 import { ZodError } from "zod";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import Image from "next/image";
 
 const Page = () => {
   const {
@@ -28,6 +29,7 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
+  const [show, setShow] = useState(false);
   const router = useRouter();
 
   const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({
@@ -61,7 +63,13 @@ const Page = () => {
       <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col items-center space-y-2 text-center">
-            <Icons.logo className="h-20 w-20" />
+            <Image
+              src="/logo.png"
+              height={86}
+              width={80}
+              alt="logo"
+              className="h-20 w-20"
+            />
             <h1 className="text-2xl font-semibold tracking-tight">
               Crea una cuenta
             </h1>
@@ -88,7 +96,7 @@ const Page = () => {
                     className={cn({
                       "focus-visible:ring-red-500": errors.email,
                     })}
-                    placeholder="you@example.com"
+                    placeholder="tu@correo.com"
                   />
                   {errors?.email && (
                     <p className="text-sm text-red-500">
@@ -97,16 +105,29 @@ const Page = () => {
                   )}
                 </div>
 
-                <div className="grid gap-1 py-2">
+                <div className="grid gap-1 py-2 relative">
                   <Label htmlFor="password">Contraseña</Label>
                   <Input
                     {...register("password")}
-                    type="password"
+                    type={!show ? "password" : "text"}
                     className={cn({
                       "focus-visible:ring-red-500": errors.password,
                     })}
-                    placeholder="Password"
+                    placeholder="Contraseña"
                   />
+                  {!show ? (
+                    <EyeOff
+                      className="absolute bottom-5 right-2 z-1 cursor-pointer"
+                      size={20}
+                      onClick={() => setShow(true)}
+                    />
+                  ) : (
+                    <Eye
+                      className="absolute bottom-5 right-2 z-1 cursor-pointer"
+                      size={20}
+                      onClick={() => setShow(false)}
+                    />
+                  )}
                   {errors?.password && (
                     <p className="text-sm text-red-500">
                       {errors.password.message}

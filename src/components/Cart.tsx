@@ -64,11 +64,11 @@ const Cart = () => {
               <Separator />
               <div className="space-y-1.5 text-sm">
                 <div className="flex">
-                  <span className="flex-1">Shipping</span>
-                  <span>Free</span>
+                  <span className="flex-1">Envio</span>
+                  <span>Gratuito</span>
                 </div>
                 <div className="flex">
-                  <span className="flex-1">Transaction Fee</span>
+                  <span className="flex-1">Tarifa de transacción</span>
                   <span>{formatPrice(fee)}</span>
                 </div>
                 <div className="flex">
@@ -85,7 +85,7 @@ const Cart = () => {
                       className: "w-full",
                     })}
                   >
-                    Continue to Checkout
+                    Continuar con la compra
                   </Link>
                 </SheetTrigger>
               </SheetFooter>
@@ -98,12 +98,12 @@ const Cart = () => {
               className="relative mb-4 h-60 w-60 text-muted-foreground"
             >
               <Image
-                src="/hippo-empty-cart.png"
+                src="/capi-empty-cart.png"
                 fill
                 alt="empty shopping cart hippo"
               />
             </div>
-            <div className="text-xl font-semibold">Your cart is empty</div>
+            <div className="text-xl font-semibold">Tu carrito está vacío</div>
             <SheetTrigger asChild>
               <Link
                 href="/products"
@@ -113,7 +113,7 @@ const Cart = () => {
                   className: "text-sm text-muted-foreground",
                 })}
               >
-                Add items to your cart to checkout
+                Añade artículos a tu carrito para proceder al pago
               </Link>
             </SheetTrigger>
           </div>

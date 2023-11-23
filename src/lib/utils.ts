@@ -26,8 +26,8 @@ export function formatPrice(
 }
 
 export function constructMetadata({
-  title = "DigitalCapi - the marketplace for digital assets",
-  description = "DigitalCapi is an open-source marketplace for high-quality digital goods.",
+  title = "DigitalCapi - el mercado para activos digitales",
+  description = "DigitalCapi es un mercado de código abierto para bienes digitales de alta calidad.",
   image = "/thumbnail.png",
   icons = "/favicon.ico",
   noIndex = false,

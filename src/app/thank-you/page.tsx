@@ -8,6 +8,7 @@ import { PRODUCT_CATEGORIES } from "@/config";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
 import PaymentStatus from "@/components/PaymentStatus";
+import ClearCartComponent from "@/components/ClearCartComponent";
 
 interface PageProps {
   searchParams: {
@@ -51,10 +52,11 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
 
   return (
     <main className="relative lg:min-h-full">
+      <ClearCartComponent />
       <div className="hidden lg:block h-80 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12">
         <Image
           fill
-          src="/checkout-thank-you.jpg"
+          src="/checkout.jpg"
           className="h-full w-full object-cover object-center"
           alt="thank you for your order"
         />

@@ -52,7 +52,7 @@ export const stripeWebhookHandler = async (
 
     const [user] = users;
 
-    if (!user) return res.status(404).json({ error: "No such user exists." });
+    if (!user) return res.status(404).json({ error: "No existe tal usuario." });
 
     const { docs: orders } = await payload.find({
       collection: "orders",
@@ -66,7 +66,7 @@ export const stripeWebhookHandler = async (
 
     const [order] = orders;
 
-    if (!user) return res.status(404).json({ error: "No such order exists." });
+    if (!user) return res.status(404).json({ error: "No existe tal pedido." });
 
     await payload.update({
       collection: "orders",
@@ -83,9 +83,9 @@ export const stripeWebhookHandler = async (
     // send receipt
     try {
       const data = await resend.emails.send({
-        from: "DigitalCapi <hello@joshtriedcoding.com>",
+        from: "DigitalCapi <hello@joelapablaza.com.ar>",
         to: [user.email],
-        subject: "Thanks for your order! This is your receipt.",
+        subject: "¡Gracias por tu pedido! Este es tu recibo.",
         html: ReceiptEmailHtml({
           date: new Date(),
           email: user.email,
