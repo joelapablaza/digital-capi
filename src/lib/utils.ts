@@ -58,7 +58,7 @@ export function constructMetadata({
       creator: "@joshtriedcoding",
     },
     icons,
-    metadataBase: new URL("https://DigitalCapi.up.railway.app"),
+    metadataBase: new URL("https://digital-capi-production.up.railway.app"),
     ...(noIndex && {
       robots: {
         index: false,
