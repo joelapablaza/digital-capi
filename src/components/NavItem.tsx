@@ -66,19 +66,19 @@ const NavItem = ({
                       key={item.name}
                       className="group relative text-base sm:text-sm"
                     >
-                      <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                        <Image
-                          src={item.imageSrc}
-                          alt="product category image"
-                          fill
-                          className="object-cover object-center"
-                        />
-                      </div>
-
                       <Link
                         href={item.href}
-                        className="mt-6 block font-medium text-gray-900"
+                        className=" block font-medium text-gray-900"
                       >
+                        <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75 mb-5">
+                          <Image
+                            src={item.imageSrc}
+                            alt="product category image"
+                            fill
+                            className="object-cover object-center"
+                          />
+                        </div>
+
                         {item.name}
                       </Link>
                       <p className="mt-1" aria-hidden="true">

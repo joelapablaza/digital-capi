@@ -58,7 +58,11 @@ const Footer = () => {
         <div className="py-10 md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Todos los derechos reservados
+              &copy; {new Date().getFullYear()} Todos los derechos reservados{" "}
+              <span> | </span>{" "}
+              <a href="http://github.com/joelapablaza" target="_blank">
+                <span>Joel Apablaza</span>
+              </a>
             </p>
           </div>
 

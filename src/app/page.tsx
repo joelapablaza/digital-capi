@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <MaxWidthWrapper>
-        <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
+        <div className="mx-auto py-14 text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
             Tu mercado para productos de alta calidad{" "}
             <span className="text-blue-600">recursos digitales</span>.
@@ -48,7 +48,7 @@ export default function Home() {
         </div>
 
         <ProductReel
-          query={{ sort: "desc", limit: 4 }}
+          query={{ sort: "desc", limit: 8 }}
           href="/products?sort=recent"
           title="Novedades"
         />
