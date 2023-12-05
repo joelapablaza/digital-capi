@@ -31,8 +31,8 @@ export default function Home() {
       <MaxWidthWrapper>
         <div className="mx-auto py-14 text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Tu mercado para productos de alta calidad{" "}
-            <span className="text-blue-600">recursos digitales</span>.
+            Tu mercado para productos digitales de{" "}
+            <span className="text-blue-600">alta calidad</span>.
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
             Bienvenido a Digital-Capi. Cada recurso en nuestra plataforma es
