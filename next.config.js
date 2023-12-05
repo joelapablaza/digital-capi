@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "digital-capi-production.up.railway.app",
         pathname: "**",
       },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        pathname: "**",
+      },
     ],
   },
 };
