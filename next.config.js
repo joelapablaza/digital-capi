@@ -3,14 +3,14 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "digital-capi-production.up.railway.app",
-        pathname: "**",
+        protocol: 'https',
+        hostname: 'digital-capi.onrender.com',
+        pathname: '**',
       },
       {
-        protocol: "http",
-        hostname: "localhost",
-        pathname: "**",
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '**',
       },
     ],
   },
