@@ -1,27 +1,29 @@
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import ProductReel from "@/components/ProductReel";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
-import Link from "next/link";
+import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import ProductReel from '@/components/ProductReel';
+import DescountBanner from '@/components/descount-banner';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { ArrowDownToLine, CheckCircle, Leaf } from 'lucide-react';
+import Link from 'next/link';
 
 const perks = [
   {
-    name: "Entrega Inmediata",
+    name: 'Entrega Inmediata',
     Icon: ArrowDownToLine,
     description:
-      "Recibe tus activos entregados en tu correo electrónico en segundos y descárgalos de inmediato.",
+      'Recibe tus activos entregados en tu correo electrónico en segundos y descárgalos de inmediato.',
   },
   {
-    name: "Calidad Garantizada",
+    name: 'Calidad Garantizada',
     Icon: CheckCircle,
     description:
-      "Cada recurso en nuestra plataforma es verificado por nuestro equipo para asegurar nuestros más altos estándares de calidad. ¿No estás satisfecho? Ofrecemos una garantía de reembolso de 30 días.",
+      'Cada recurso en nuestra plataforma es verificado por nuestro equipo para asegurar nuestros más altos estándares de calidad. ¿No estás satisfecho? Ofrecemos una garantía de reembolso de 30 días.',
   },
   {
-    name: "Para el Planeta",
+    name: 'Para el Planeta',
     Icon: Leaf,
     description:
-      "Hemos comprometido el 5% de las ventas a la preservación y restauración del entorno natural.",
+      'Hemos comprometido el 5% de las ventas a la preservación y restauración del entorno natural.',
   },
 ];
 
@@ -30,9 +32,8 @@ export default function Home() {
     <>
       <MaxWidthWrapper>
         <div className="mx-auto py-14 text-center flex flex-col items-center max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Tu mercado para productos digitales de{" "}
-            <span className="text-blue-600">alta calidad</span>.
+          <h1 className="text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl">
+            Tu mercado para productos digitales de alta calidad.
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
             Bienvenido a Digital-Capi. Cada recurso en nuestra plataforma es
@@ -43,12 +44,80 @@ export default function Home() {
             <Link href="/products" className={buttonVariants()}>
               Explora las tendencias
             </Link>
-            <Button variant="ghost">Promesa de calidad &rarr;</Button>
+            <Link
+              href="products"
+              className={buttonVariants({ variant: 'ghost' })}
+            >
+              Promesa de calidad &rarr;
+            </Link>
+          </div>
+          <div className="hidden sm:flex sm:flex-row gap-10 mt-10">
+            <Link
+              href={'#'}
+              className={cn(
+                buttonVariants({
+                  variant: 'outline',
+                  className: 'gap-1.5',
+                }),
+                'mt-5'
+              )}
+            >
+              Ilustraciones
+            </Link>
+            <Link
+              href={'#'}
+              className={cn(
+                buttonVariants({
+                  variant: 'outline',
+                  className: 'gap-1.5',
+                }),
+                'mt-5'
+              )}
+            >
+              Tipografias
+            </Link>
+            <Link
+              href={'#'}
+              className={cn(
+                buttonVariants({
+                  variant: 'outline',
+                  className: 'gap-1.5',
+                }),
+                'mt-5'
+              )}
+            >
+              Diseño web
+            </Link>
+            <Link
+              href={'#'}
+              className={cn(
+                buttonVariants({
+                  variant: 'outline',
+                  className: 'gap-1.5',
+                }),
+                'mt-5'
+              )}
+            >
+              Simple
+            </Link>
+            <Link
+              href={'#'}
+              className={cn(
+                buttonVariants({
+                  variant: 'outline',
+                  className: 'gap-1.5',
+                }),
+                'mt-5'
+              )}
+            >
+              Iconos
+            </Link>
           </div>
         </div>
 
+        <DescountBanner />
         <ProductReel
-          query={{ sort: "desc", limit: 8 }}
+          query={{ sort: 'desc', limit: 8 }}
           href="/products?sort=recent"
           title="Novedades"
         />
@@ -63,7 +132,7 @@ export default function Home() {
                 className="text-center md:flex md:items-start md:text-left lg:block lg:text-center"
               >
                 <div className="md:flex-shrink-0 flex justify-center">
-                  <div className="h-16 w-16 flex items-center justify-center rounded-full bg-blue-100 text-blue-900">
+                  <div className="h-16 w-16 flex items-center justify-center rounded-full bg-green-100 text-green-900">
                     {<perk.Icon className="w-1/3 h-1/3" />}
                   </div>
                 </div>

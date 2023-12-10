@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from 'next/navigation';
+import MaxWidthWrapper from './MaxWidthWrapper';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   const pathname = usePathname();
-  const pathsToMinimize = ["/verify-email", "/sign-up", "/sign-in"];
+  const pathsToMinimize = ['/verify-email', '/sign-up', '/sign-in'];
 
   return (
     <footer className="bg-white flex-grow-0">
@@ -41,7 +41,7 @@ const Footer = () => {
                   <h3 className="font-semibold text-gray-900">Sé vendedor</h3>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Si deseas vender productos digitales de alta calidad, puedes
-                    hacerlo en cuestión de minutos.{" "}
+                    hacerlo en cuestión de minutos.{' '}
                     <Link
                       href="/sign-in?as=seller"
                       className="whitespace-nowrap font-medium text-black hover:text-zinc-900"
@@ -54,12 +54,20 @@ const Footer = () => {
             </div>
           )}
         </div>
+        <div className="text-center mt-10">
+          <p className="text-sm text-muted-foreground">
+            <span className="font-semibold">Sobre este sitio: </span>
+            construido con React & Next.js, TypeScript, Payload CMS, TRCP,
+            Tailwind CSS, React Email & Resend, self host Express on Next.js
+            Render hosting.
+          </p>
+        </div>
 
         <div className="py-10 md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Todos los derechos reservados{" "}
-              <span> | </span>{" "}
+              &copy; {new Date().getFullYear()} Todos los derechos reservados{' '}
+              <span> | </span>{' '}
               <a href="http://github.com/joelapablaza" target="_blank">
                 <span>Joel Apablaza</span>
               </a>

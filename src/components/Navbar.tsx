@@ -1,13 +1,14 @@
-import Link from "next/link";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import NavItems from "./NavItems";
-import { buttonVariants } from "./ui/button";
-import Cart from "./Cart";
-import { getServerSideUser } from "@/lib/payload-utils";
-import { cookies } from "next/headers";
-import UserAccountNav from "./UserAccountNav";
-import MobileNav from "./MobileNav";
-import Image from "next/image";
+import Link from 'next/link';
+import MaxWidthWrapper from './MaxWidthWrapper';
+import NavItems from './NavItems';
+import { buttonVariants } from './ui/button';
+import Cart from './Cart';
+import { getServerSideUser } from '@/lib/payload-utils';
+import { cookies } from 'next/headers';
+import UserAccountNav from './UserAccountNav';
+import MobileNav from './MobileNav';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 const Navbar = async () => {
   const nextCookies = cookies();
@@ -39,12 +40,26 @@ const Navbar = async () => {
               </div>
 
               <div className="ml-auto flex items-center">
+                <div
+                  className={cn(
+                    buttonVariants({
+                      variant: 'destructive',
+                    }),
+                    'text-[1rem]'
+                  )}
+                >
+                  <span className="font-bold">25% off</span>{' '}
+                  <span>&nbsp;Navidad</span>
+                </div>
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                  <div className="flex lg:ml-6">
+                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                  </div>
                   {user ? null : (
                     <Link
                       href="/sign-in"
                       className={buttonVariants({
-                        variant: "ghost",
+                        variant: 'ghost',
                       })}
                     >
                       Ingresa
@@ -61,7 +76,7 @@ const Navbar = async () => {
                     <Link
                       href="/sign-up"
                       className={buttonVariants({
-                        variant: "ghost",
+                        variant: 'ghost',
                       })}
                     >
                       Crear cuenta

@@ -1,14 +1,14 @@
-import { getServerSideUser } from "@/lib/payload-utils";
-import Image from "next/image";
-import { cookies } from "next/headers";
-import { getPayloadClient } from "@/get-payload";
-import { notFound, redirect } from "next/navigation";
-import { Product, ProductFile, User } from "@/payload-types";
-import { PRODUCT_CATEGORIES } from "@/config";
-import { formatPrice } from "@/lib/utils";
-import Link from "next/link";
-import PaymentStatus from "@/components/PaymentStatus";
-import ClearCartComponent from "@/components/ClearCartComponent";
+import { getServerSideUser } from '@/lib/payload-utils';
+import Image from 'next/image';
+import { cookies } from 'next/headers';
+import { getPayloadClient } from '@/get-payload';
+import { notFound, redirect } from 'next/navigation';
+import { Product, ProductFile, User } from '@/payload-types';
+import { PRODUCT_CATEGORIES } from '@/config';
+import { formatPrice } from '@/lib/utils';
+import Link from 'next/link';
+import PaymentStatus from '@/components/PaymentStatus';
+import ClearCartComponent from '@/components/ClearCartComponent';
 
 interface PageProps {
   searchParams: {
@@ -24,7 +24,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
   const payload = await getPayloadClient();
 
   const { docs: orders } = await payload.find({
-    collection: "orders",
+    collection: 'orders',
     depth: 2,
     where: {
       id: {
@@ -38,7 +38,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
   if (!order) return notFound();
 
   const orderUserId =
-    typeof order.user === "string" ? order.user : order.user.id;
+    typeof order.user === 'string' ? order.user : order.user.id;
 
   if (orderUserId !== user?.id) {
     return redirect(`/sign-in?origin=thank-you?orderId=${order.id}`);
@@ -65,7 +65,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
       <div>
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-32 xl:gap-x-24">
           <div className="lg:col-start-2">
-            <p className="text-sm font-medium text-blue-600">
+            <p className="text-sm font-medium text-green-600">
               Pedido realizado
             </p>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -75,8 +75,8 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
               <p className="mt-2 text-base text-muted-foreground">
                 Su pedido ha sido procesado y sus recursos están disponibles
                 para descargar a continuación. Hemos enviado su recibo y los
-                detalles del pedido a{" "}
-                {typeof order.user !== "string" ? (
+                detalles del pedido a{' '}
+                {typeof order.user !== 'string' ? (
                   <span className="font-medium text-gray-900">
                     {order.user.email}
                   </span>
@@ -108,7 +108,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
                   return (
                     <li key={product.id} className="flex space-x-6 py-6">
                       <div className="relative h-24 w-24">
-                        {typeof image !== "string" && image.url ? (
+                        {typeof image !== 'string' && image.url ? (
                           <Image
                             fill
                             src={image.url}
@@ -129,7 +129,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
                           <a
                             href={downloadUrl}
                             download={product.name}
-                            className="text-blue-600 hover:underline underline-offset-2"
+                            className="text-green-600 hover:underline underline-offset-2"
                           >
                             Descargar recursos
                           </a>
@@ -170,7 +170,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
               <div className="mt-16 border-t border-gray-200 py-6 text-right">
                 <Link
                   href="/products"
-                  className="text-sm font-medium text-blue-600 hover:text-blue-500"
+                  className="text-sm font-medium text-green-600 hover:text-green-500"
                 >
                   Seguir comprando &rarr;
                 </Link>

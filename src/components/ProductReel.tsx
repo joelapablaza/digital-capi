@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { TQueryValidator } from "@/lib/validators/query-validator";
-import { Product } from "@/payload-types";
-import { trpc } from "@/trpc/client";
-import Link from "next/link";
-import ProductListing from "./ProductListing";
+import { TQueryValidator } from '@/lib/validators/query-validator';
+import { Product } from '@/payload-types';
+import { trpc } from '@/trpc/client';
+import Link from 'next/link';
+import ProductListing from './ProductListing';
 
 interface ProductReelProps {
   title: string;
@@ -55,7 +55,7 @@ const ProductReel = (props: ProductReelProps) => {
         {href ? (
           <Link
             href={href}
-            className="hidden text-sm font-medium text-blue-600 hover:text-blue-500 md:block"
+            className="hidden text-sm font-medium text-green-600 hover:text-green-500 md:block"
           >
             Explora la colección <span aria-hidden="true">&rarr;</span>
           </Link>
