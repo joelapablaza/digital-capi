@@ -1,6 +1,6 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import ProductReel from '@/components/ProductReel';
-import DescountBanner from '@/components/descount-banner';
+import DiscountBanner from '@/components/DiscountBanner';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ArrowDownToLine, CheckCircle, Leaf } from 'lucide-react';
@@ -115,7 +115,7 @@ export default function Home() {
           </div>
         </div>
 
-        <DescountBanner />
+        <DiscountBanner />
         <ProductReel
           query={{ sort: 'desc', limit: 8 }}
           href="/products?sort=recent"
